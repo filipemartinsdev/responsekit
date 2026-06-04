@@ -1,11 +1,12 @@
 package io.github.responsekit.core;
 
+import java.io.Serializable;
 import java.util.List;
 
 /*
  * Template for Paged response.
  * **/
-public class PagedResponse<T> {
+public class PagedResponse<T> implements Serializable {
     public final Long page;
     public final Long size;
     public final Boolean isLast;

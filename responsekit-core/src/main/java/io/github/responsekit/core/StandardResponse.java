@@ -2,11 +2,13 @@ package io.github.responsekit.core;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
+import java.io.Serializable;
+
 /*
 * Template for API responses, following JSend pattern.
 * **/
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class StandardResponse<T> {
+public class StandardResponse<T> implements Serializable {
     public final String status;
     public final String message;
     public final T data;
