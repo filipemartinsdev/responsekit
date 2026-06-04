@@ -6,12 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="responsekit-spring" />
+        <module name="responsekit-quarkus" />
         <module name="responsekit-core" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="response-kit" target="17" />
-      <module name="responsekit-quarkus-extension" target="17" />
       <module name="responsekit-spring-boot-starter" target="17" />
     </bytecodeTargetLevel>
   </component>
