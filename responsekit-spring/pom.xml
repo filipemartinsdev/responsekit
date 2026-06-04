@@ -14,6 +14,7 @@
   </parent>
 
   <name>Response Kit Spring</name>
+  <description>A simple library with utility tools for Spring Based applications</description>
 
   <artifactId>responsekit-spring</artifactId>
   <packaging>jar</packaging>
