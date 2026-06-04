@@ -14,8 +14,8 @@
 
   <modules>
     <module>responsekit-core</module>
-    <module>responsekit-spring-boot-starter</module>
-    <module>responsekit-quarkus-extension</module>
+<!--    <module>responsekit-spring-boot-starter</module>-->
+<!--    <module>responsekit-quarkus-extension</module>-->
   </modules>
 
   <name>responsekit</name>
