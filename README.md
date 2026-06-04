@@ -45,7 +45,7 @@ Include in `pom.xml`:
     <dependency>
         <groupId>io.github.filipemartinsdev</groupId>
         <artifactId>responsekit-core</artifactId>
-        <version>0.2.1</version>
+        <version>0.3.0</version>
     </dependency>
 </dependencies>
 ````
@@ -72,7 +72,7 @@ Include in `pom.xml`:
       <dependency>
           <groupId>io.github.filipemartinsdev</groupId>
           <artifactId>responsekit-spring</artifactId>
-          <version>0.2.1</version>
+          <version>0.3.0</version>
       </dependency>
   </dependencies>
   ````
@@ -81,5 +81,25 @@ Include in `pom.xml`:
 
 ## Quarkus library
 
-  > 🚧 Coming soon...
+An integration library to perform idiomatic operations on Quarkus Based applications.
 
+### Requirements
+
+- Java 17+
+- Quarkus 3.15+
+- Apache Maven
+
+### Install
+
+Include in `pom.xml`:
+
+
+  ````xml
+  <dependencies>
+      <dependency>
+          <groupId>io.github.filipemartinsdev</groupId>
+          <artifactId>responsekit-spring</artifactId>
+          <version>0.3.0</version>
+      </dependency>
+  </dependencies>
+  ````
