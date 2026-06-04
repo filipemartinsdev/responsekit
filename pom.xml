@@ -18,7 +18,8 @@
 <!--    <module>responsekit-quarkus-extension</module>-->
   </modules>
 
-  <name>responsekit</name>
+  <name>Response Kit</name>
+
   <description>A simple library with utility tools for Java REST applications</description>
   <url>https://github.com/filipemartinsdev/response-kit</url>
 

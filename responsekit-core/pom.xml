@@ -13,6 +13,8 @@
     <version>0.1.0</version>
   </parent>
 
+  <name>Response Kit Core</name>
+
   <artifactId>responsekit-core</artifactId>
   <packaging>jar</packaging>
 
