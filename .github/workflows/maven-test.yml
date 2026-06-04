@@ -15,7 +15,7 @@ on:
     branches: [ "main", "develop" ]
 
 jobs:
-  test-core:
+  tests:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,35 +27,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Test core with Maven
-      run: mvn clean test --file responsekit-core/pom.xml
-
-  test-spring-boot-starter:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v4
-      - name: Set up JDK 17
-        uses: actions/setup-java@v4
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-          cache: maven
-      - name: Test spring-boot-starter with Maven
-        run: mvn test --file responsekit-spring/pom.xml
-
-  test-quarkus-extension:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v4
-      - name: Set up JDK 17
-        uses: actions/setup-java@v4
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-          cache: maven
-      - name: Test quarkus-extension with Maven
-        run: mvn test --file responsekit-quarkus/pom.xml
+      run: mvn clean test
 
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
