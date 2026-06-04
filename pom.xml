@@ -9,13 +9,13 @@
 
   <groupId>io.github.filipemartinsdev</groupId>
   <artifactId>responsekit-parent</artifactId>
-  <version>0.1.0</version>
+  <version>0.2.0</version>
   <packaging>pom</packaging>
 
   <modules>
     <module>responsekit-core</module>
-<!--    <module>responsekit-spring-boot-starter</module>-->
-<!--    <module>responsekit-quarkus-extension</module>-->
+    <module>responsekit-spring</module>
+<!--    <module>responsekit-quarkus</module>-->
   </modules>
 
   <name>Response Kit</name>
