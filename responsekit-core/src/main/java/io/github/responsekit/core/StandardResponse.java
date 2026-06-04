@@ -3,6 +3,7 @@ package io.github.responsekit.core;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /*
 * Template for API responses, following JSend pattern.
@@ -83,6 +84,18 @@ public class StandardResponse<T> implements Serializable {
         public StandardResponse<T> build(){
             return new StandardResponse<T>(this.status.value, this.message, this.data);
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        StandardResponse<?> that = (StandardResponse<?>) o;
+        return Objects.equals(status, that.status) && Objects.equals(message, that.message) && Objects.equals(data, that.data);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(status, message, data);
     }
 }
 

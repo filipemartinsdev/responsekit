@@ -2,6 +2,7 @@ package io.github.responsekit.core;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Objects;
 
 /*
  * Template for Paged response.
@@ -72,5 +73,17 @@ public class PagedResponse<T> implements Serializable {
         public PagedResponse<T> build() {
             return new PagedResponse<>(page, size, isLast, totalElements, totalPages, content);
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        PagedResponse<?> that = (PagedResponse<?>) o;
+        return Objects.equals(page, that.page) && Objects.equals(size, that.size) && Objects.equals(isLast, that.isLast) && Objects.equals(totalElements, that.totalElements) && Objects.equals(totalPages, that.totalPages) && Objects.equals(content, that.content);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(page, size, isLast, totalElements, totalPages, content);
     }
 }
