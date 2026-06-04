@@ -26,9 +26,9 @@ The goal of this library is to make it easier to create standard responses with 
 
 ---
 
-## Core library
+## [Core library](responsekit-core/README.md)
 
-Base library to use with any Java application.
+Base library to use with any Java application. 
 
 ### Requirements
 
@@ -52,7 +52,7 @@ Include in `pom.xml`:
 
 ---
 
-## Spring library
+## [Spring library](responsekit-spring/README.md)
 
 An integration library to perform idiomatic operations on Spring Based applications.
 
@@ -79,7 +79,7 @@ Include in `pom.xml`:
 
 ---
 
-## Quarkus library
+## [Quarkus library](responsekit-quarkus/README.md)
 
 An integration library to perform idiomatic operations on Quarkus Based applications.
 
