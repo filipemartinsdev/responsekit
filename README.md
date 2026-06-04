@@ -45,7 +45,7 @@ Include in `pom.xml`:
     <dependency>
         <groupId>io.github.filipemartinsdev</groupId>
         <artifactId>responsekit-core</artifactId>
-        <version>0.2.0</version>
+        <version>0.2.1</version>
     </dependency>
 </dependencies>
 ````
@@ -72,7 +72,7 @@ Include in `pom.xml`:
       <dependency>
           <groupId>io.github.filipemartinsdev</groupId>
           <artifactId>responsekit-spring</artifactId>
-          <version>0.2.0</version>
+          <version>0.2.1</version>
       </dependency>
   </dependencies>
   ````
