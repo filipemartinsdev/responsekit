@@ -41,7 +41,7 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Test spring-boot-starter with Maven
-        run: mvn test --file responsekit-spring-boot-starter/pom.xml
+        run: mvn test --file responsekit-spring/pom.xml
 
   test-quarkus-extension:
     runs-on: ubuntu-latest
@@ -55,7 +55,7 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Test quarkus-extension with Maven
-        run: mvn test --file responsekit-quarkus-extension/pom.xml
+        run: mvn test --file responsekit-quarkus/pom.xml
 
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
