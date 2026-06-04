@@ -7,41 +7,14 @@
     <maven.compiler.release>17</maven.compiler.release>
   </properties>
 
-  <groupId>io.github.filipemartinsdev</groupId>
-  <artifactId>response-kit</artifactId>
-  <version>1.0.0</version>
+  <parent>
+    <groupId>io.github.filipemartinsdev</groupId>
+    <artifactId>responsekit-parent</artifactId>
+    <version>0.1.0</version>
+  </parent>
+
+  <artifactId>responsekit-core</artifactId>
   <packaging>jar</packaging>
-
-  <name>rest-utils</name>
-  <description>A simple library with utility tools for Java REST applications</description>
-  <url>https://github.com/filipemartinsdev/response-kit</url>
-
-  <developers>
-    <developer>
-      <id>filipemartinsdev</id>
-      <name>Filipe Martins Andrade</name>
-      <email>dev.filipemartins@gmail.com</email>
-      <organization>Filipe Martins OSS</organization>
-      <organizationUrl>https://github.com/filipemartinsdev</organizationUrl>
-    </developer>
-  </developers>
-
-  <scm>
-    <connection>scm:git:git://github.com/filipemartinsdev/response-kit.git</connection>
-    <developerConnection>scm:git:ssh://github.com:filipemartinsdev/response-kit.git</developerConnection>
-    <url>https://github.com/filipemartinsdev/response-kit</url>
-    <tag>HEAD</tag>
-  </scm>
-
-  <licenses>
-    <license>
-      <name>Apache License, Version 2.0</name>
-      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      <distribution>repo</distribution>
-      <comments>A business-friendly OSS license</comments>
-    </license>
-  </licenses>
-
 
   <dependencies>
     <dependency>
@@ -57,103 +30,4 @@
       <version>2.15.0</version>
     </dependency>
   </dependencies>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.11.0</version>
-        <configuration>
-          <source>17</source>
-          <target>17</target>
-        </configuration>
-      </plugin>
-
-      <!-- Central Publishing Plugin -->
-      <plugin>
-        <groupId>org.sonatype.central</groupId>
-        <artifactId>central-publishing-maven-plugin</artifactId>
-        <version>0.9.0</version>
-        <extensions>true</extensions>
-        <configuration>
-          <publishingServerId>central</publishingServerId>
-          <autoPublish>true</autoPublish>
-          <waitUntil>published</waitUntil>
-        </configuration>
-      </plugin>
-
-      <!-- GPG Signing Plugin -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-gpg-plugin</artifactId>
-        <version>3.1.0</version>
-        <executions>
-          <execution>
-            <id>sign-artifacts</id>
-            <phase>verify</phase>
-            <goals>
-              <goal>sign</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <!-- Retrieves passphrase from settings.xml -->
-          <passphraseServerId>gpg.passphrase</passphraseServerId>
-          <!-- Required for gpg2 to avoid GUI prompts -->
-          <gpgArguments>
-            <arg>--pinentry-mode</arg>
-            <arg>loopback</arg>
-          </gpgArguments>
-          <!-- Ensure correct GPG binary is used -->
-          <executable>gpg</executable>
-        </configuration>
-      </plugin>
-
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-source-plugin</artifactId>
-        <version>3.3.1</version>
-        <executions>
-          <execution>
-            <id>attach-sources</id>
-            <goals>
-              <goal>jar-no-fork</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-
-      <!-- Javadoc Generation Plugin -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <version>3.6.3</version>
-        <executions>
-          <execution>
-            <id>attach-javadocs</id>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <!-- Optional: Configure Javadoc strictness -->
-          <doclint>none</doclint>
-          <quiet>true</quiet>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-
-  <distributionManagement>
-    <snapshotRepository>
-      <id>ossrh</id>
-      <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
-    <repository>
-      <id>ossrh</id>
-      <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-    </repository>
-  </distributionManagement>
 </project>
