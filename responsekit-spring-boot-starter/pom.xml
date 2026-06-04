@@ -17,17 +17,17 @@
   <packaging>jar</packaging>
 
   <dependencies>
-    <dependency>
-      <groupId>io.github.filipemartinsdev</groupId>
-      <artifactId>responsekit-core</artifactId>
-      <version>${project.version}</version>
-    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>io.github.filipemartinsdev</groupId>-->
+<!--      <artifactId>responsekit-core</artifactId>-->
+<!--      <version>${project.version}</version>-->
+<!--    </dependency>-->
 
-    <dependency>
-      <groupId>io.github.filipemartinsdev</groupId>
-      <artifactId>responsekit-spring-boot-autoconfigure</artifactId>
-      <version>${project.version}</version>
-    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>io.github.filipemartinsdev</groupId>-->
+<!--      <artifactId>responsekit-spring-boot-autoconfigure</artifactId>-->
+<!--      <version>${project.version}</version>-->
+<!--    </dependency>-->
 
     <dependency>
       <groupId>junit</groupId>
