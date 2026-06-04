@@ -1,4 +1,4 @@
-package io.github.restutils;
+package io.github.responsekit.core;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 

@@ -1,6 +1,6 @@
-package io.github.restutils;
+package io.github.responsekit;
 
-import junit.framework.TestCase;
+import io.github.responsekit.core.PagedResponse;
 import org.junit.Test;
 
 import java.util.ArrayList;

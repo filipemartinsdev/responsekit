@@ -5,11 +5,11 @@ target/
 .kotlin
 
 ### IntelliJ IDEA ###
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
-.idea/**
+responsekit-core/.idea/modules.xml
+responsekit-core/.idea/jarRepositories.xml
+responsekit-core/.idea/compiler.xml
+responsekit-core/.idea/libraries/
+responsekit-core/.idea/**
 *.iws
 *.iml
 *.ipr

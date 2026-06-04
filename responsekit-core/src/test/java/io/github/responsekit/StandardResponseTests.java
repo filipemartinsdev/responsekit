@@ -1,5 +1,6 @@
-package io.github.restutils;
+package io.github.responsekit;
 
+import io.github.responsekit.core.StandardResponse;
 import org.junit.Test;
 
 import java.util.Map;
