@@ -19,6 +19,7 @@
   </modules>
 
   <name>Response Kit</name>
+  <description>Utility library to Java REST applications</description>
 
   <url>https://github.com/filipemartinsdev/response-kit</url>
 
