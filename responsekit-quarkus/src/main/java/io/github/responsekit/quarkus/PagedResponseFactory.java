@@ -29,6 +29,8 @@ public class PagedResponseFactory {
                 .page(query.page().index)
                 .size(query.page().size)
                 .isLast(!query.hasNextPage())
+                .totalElements(query.count())
+                .totalPages(query.pageCount())
                 .build();
     }
 
