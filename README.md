@@ -98,7 +98,7 @@ Include in `pom.xml`:
   <dependencies>
       <dependency>
           <groupId>io.github.filipemartinsdev</groupId>
-          <artifactId>responsekit-spring</artifactId>
+          <artifactId>responsekit-quarkus</artifactId>
           <version>0.3.1</version>
       </dependency>
   </dependencies>
