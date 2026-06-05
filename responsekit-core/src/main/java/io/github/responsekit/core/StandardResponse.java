@@ -97,5 +97,14 @@ public class StandardResponse<T> implements Serializable {
     public int hashCode() {
         return Objects.hash(status, message, data);
     }
+
+    @Override
+    public String toString() {
+        return "StandardResponse{" +
+                "status='" + status + '\'' +
+                ", message='" + message + '\'' +
+                ", data=" + data +
+                '}';
+    }
 }
 

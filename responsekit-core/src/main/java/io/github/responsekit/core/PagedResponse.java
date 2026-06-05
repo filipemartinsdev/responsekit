@@ -86,4 +86,16 @@ public class PagedResponse<T> implements Serializable {
     public int hashCode() {
         return Objects.hash(page, size, isLast, totalElements, totalPages, content);
     }
+
+    @Override
+    public String toString() {
+        return "PagedResponse{" +
+                "page=" + page +
+                ", size=" + size +
+                ", isLast=" + isLast +
+                ", totalElements=" + totalElements +
+                ", totalPages=" + totalPages +
+                ", content=" + content +
+                '}';
+    }
 }
