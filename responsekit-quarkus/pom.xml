@@ -10,7 +10,7 @@
   <parent>
     <groupId>io.github.filipemartinsdev</groupId>
     <artifactId>responsekit-parent</artifactId>
-    <version>0.3.3</version>
+    <version>0.3.4</version>
   </parent>
 
   <name>Response Kit Quarkus</name>
