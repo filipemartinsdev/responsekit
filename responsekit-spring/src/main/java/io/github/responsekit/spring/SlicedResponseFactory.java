@@ -7,6 +7,7 @@ import io.github.responsekit.spring.exception.InvalidSliceException;
 import org.springframework.data.domain.Slice;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Function;
 
 public class SlicedResponseFactory {
@@ -28,8 +29,8 @@ public class SlicedResponseFactory {
                         .map(entityMapper)
                         .toList()
                 )
-                .firstCursor(cursorExtractor.apply(slice.getContent().getFirst()))
-                .lastCursor(cursorExtractor.apply(slice.getContent().getLast()))
+                .firstCursor(cursorExtractor.apply(slice.getContent().get(0)))
+                .lastCursor(cursorExtractor.apply(slice.getContent().get(slice.getContent().size() - 1)))
                 .size(slice.getSize())
                 .isLast(slice.isLast())
                 .build();
