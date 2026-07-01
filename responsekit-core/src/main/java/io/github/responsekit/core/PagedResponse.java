@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Objects;
 
 /*
- * Template for Paged response.
+ * Template for response using Offset-Based Pagination.
  * **/
 public class PagedResponse<T> implements Serializable {
     public final Long page;
