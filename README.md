@@ -3,13 +3,15 @@
 <div align="center">
 <img src="images/java.png" alt="Logo" width="160pt">
 
-<h3 align="center">Response Kit</h3>
+<h3 align="center">Response Kit</h3> 
 
 <p>
 
 A simple library to create responses for REST APIs <br>
 following [JSend](https://github.com/omniti-labs/jsend) standard. <br>
 </p>
+
+![Static Badge](https://img.shields.io/badge/version-0.3.4-417393?style=for-the-badge)
 
 <br>
 
@@ -55,7 +57,7 @@ Include in `pom.xml`:
     <dependency>
         <groupId>io.github.filipemartinsdev</groupId>
         <artifactId>responsekit-core</artifactId>
-        <version>0.3.3</version>
+        <version>0.3.4</version>
     </dependency>
 </dependencies>
 ````
@@ -82,7 +84,7 @@ Include in `pom.xml`:
       <dependency>
           <groupId>io.github.filipemartinsdev</groupId>
           <artifactId>responsekit-spring</artifactId>
-          <version>0.3.3</version>
+          <version>0.3.4</version>
       </dependency>
   </dependencies>
   ````
@@ -109,7 +111,7 @@ Include in `pom.xml`:
       <dependency>
           <groupId>io.github.filipemartinsdev</groupId>
           <artifactId>responsekit-quarkus</artifactId>
-          <version>0.3.3</version>
+          <version>0.3.4</version>
       </dependency>
   </dependencies>
   ````
