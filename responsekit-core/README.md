@@ -7,7 +7,8 @@ If you want to use ResponseKit with **Spring/Quarkus**, it's recommended to use 
 ## Features
 
 - Standard response using `StandardResponse` class.
-- Paginated responses using `PagedResponse` class.
+- Paginated (Offset-Based) responses using `PagedResponse` class.
+- Paginated (Cursor-Based) responses using `SlicedResponse` class.
 
 ## Examples of use
 
@@ -71,7 +72,7 @@ If you want to use ResponseKit with **Spring/Quarkus**, it's recommended to use 
 <br> 
 
 
-3. Paginated response.
+3. Paginated response (Offset-Based).
 
     ````java
     
