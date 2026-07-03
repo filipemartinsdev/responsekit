@@ -11,7 +11,7 @@ A simple library to create responses for REST APIs <br>
 following [JSend](https://github.com/omniti-labs/jsend) standard. <br>
 </p>
 
-![Static Badge](https://img.shields.io/badge/version-0.3.4-417393?style=for-the-badge)
+![Static Badge](https://img.shields.io/badge/version-0.4.0-417393?style=for-the-badge)
 
 <br>
 
