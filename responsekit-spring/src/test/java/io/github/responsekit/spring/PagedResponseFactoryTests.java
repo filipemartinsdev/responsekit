@@ -1,121 +1,78 @@
 package io.github.responsekit.spring;
 
 import io.github.responsekit.core.PagedResponse;
+import io.github.responsekit.spring.exception.InvalidEntityMapperException;
+import io.github.responsekit.spring.exception.InvalidPageException;
 import org.junit.Test;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
 
-import java.util.Iterator;
 import java.util.List;
-import java.util.function.Function;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 
 public class PagedResponseFactoryTests {
+    @Test
+    public void fromPageTestCase1(){
+        assertThrows(InvalidPageException.class, () -> {
+            PagedResponseFactory.fromPage(
+                    null,
+                    (object) -> object
+            );
+        });
+    }
 
     @Test
-    public void fromPageTestCase1() {
-        PagedResponse<String> expectedResponse = PagedResponse
-                .content(List.of("element1", "element2"))
+    public void fromPageTestCase2(){
+        assertThrows(InvalidEntityMapperException.class, () -> {
+            PagedResponseFactory.fromPage(
+                    new PageImpl<>(List.of()),
+                    null
+            );
+        });
+    }
+
+    @Test
+    public void fromPageTestCase3(){
+        var expected = PagedResponse
+                .content(List.of())
                 .page(0)
-                .size(2)
+                .size(10)
                 .isLast(true)
-                .totalElements(2)
-                .totalPages(1)
+                .totalPages(0)
+                .totalElements(0)
                 .build();
 
-        PagedResponse<String> response = PagedResponseFactory.fromPage(
-                new Page(){
-                    @Override
-                    public Iterator iterator() {
-                        return expectedResponse.content.stream().iterator();
-                    }
+        Page<Object> page = new PageImpl<>(List.of(), PageRequest.of(0, 10), 0);
 
-                    @Override
-                    public int getNumber() {
-                        return 0;
-                    }
-
-                    @Override
-                    public int getSize() {
-                        return expectedResponse.content.size();
-                    }
-
-                    @Override
-                    public int getNumberOfElements() {
-                        return expectedResponse.content.size();
-                    }
-
-                    @Override
-                    public List getContent() {
-                        return expectedResponse.content;
-                    }
-
-                    @Override
-                    public boolean hasContent() {
-                        return true;
-                    }
-
-                    @Override
-                    public Sort getSort() {
-                        return null;
-                    }
-
-                    @Override
-                    public boolean isFirst() {
-                        return true;
-                    }
-
-                    @Override
-                    public boolean isLast() {
-                        return true;
-                    }
-
-                    @Override
-                    public boolean hasNext() {
-                        return false;
-                    }
-
-                    @Override
-                    public boolean hasPrevious() {
-                        return false;
-                    }
-
-                    @Override
-                    public Pageable nextPageable() {
-                        return null;
-                    }
-
-                    @Override
-                    public Pageable previousPageable() {
-                        return null;
-                    }
-
-                    @Override
-                    public int getTotalPages() {
-                        return expectedResponse.totalPages.intValue();
-                    }
-
-                    @Override
-                    public long getTotalElements() {
-                        return expectedResponse.totalElements;
-                    }
-
-                    @Override
-                    public Page map(Function converter) {
-                        return null;
-                    }
-                },
-
-                (str) -> str
+        var result = PagedResponseFactory.fromPage(
+                page,
+                (object) -> object
         );
 
-        assertEquals(expectedResponse.page, response.page);
-        assertEquals(expectedResponse.size, response.size);
-        assertEquals(expectedResponse.isLast, response.isLast);
-        assertEquals(expectedResponse.totalPages, response.totalPages);
-        assertEquals(expectedResponse.totalElements, response.totalElements);
-        assertEquals(expectedResponse.content, response.content);
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void fromPageTestCase4(){
+        var expected = PagedResponse
+                .content(List.of("string1", "string2"))
+                .page(0)
+                .size(10)
+                .isLast(true)
+                .totalPages(1)
+                .totalElements(2)
+                .build();
+
+        Page<Object> page = new PageImpl<>(List.of("string1", "string2"), PageRequest.of(0, 10), 2);
+
+        var result = PagedResponseFactory.fromPage(
+                page,
+                (object) -> object
+        );
+
+        assertEquals(expected, result);
     }
 }
