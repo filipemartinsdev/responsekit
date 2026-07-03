@@ -4,12 +4,13 @@ This is the integration library to use ResponseKit with Spring. This module have
 
 ## Features
 
-- Idiomatic Factory for PagedResponse with `PagedResponseFactory` class.
-- Integration with Page class (JPA Repository response).
+- Offset-based pagination response with `PagedResponseFactory`.
+- Cursor-based pagination response with `SlicedResponseFactory`.
+- Integration with `Page` and `Slice`.
 
 ## Examples of use
 
-1. Full paged response creation with PanacheQuery and entity mapper.
+1. Response with Offset-based pagination.
 
 ````java
 import io.github.responsekit.core.PagedResponse;
@@ -20,48 +21,50 @@ import org.springframework.stereotype.Component;
 
 class App {
     @Autowired
-    YourMapper yourMapper;
-
-//    Any JpaRepository
-    @Autowired
-    YourRepository yourRepository;
+    YourRepository yourRepository; // Any JpaRepository
     
     public PagedResponse<YourDTO> getAll(Pageable pageable) {
         Page<YourEntity> page = yourRepository.findAll(pageable);
 
-        return PagedResponseFactory.fromPage(page, yourMapper::toResponse);
+        return PagedResponseFactory.fromPage(page, this::responseMapper);
     }
-}
 
-@Component
-class YourMapper {
-    public YourDTO toResponse(YourEntity entity) {
-//        ...
+    // Map an entity to DTO
+    private YourDTO responseMapper(YourEntity entity){
+        // ...
     }
 }
 ````
 
-<br> 
+<br>
 
-2. Entity mapper using Lambda expresion.
+2. Response with Cursor-based pagination.
 
 ````java
-import io.github.responsekit.core.PagedResponse;
-import io.github.responsekit.spring.PagedResponseFactory;
+import io.github.responsekit.core.SlicedResponse;
+import io.github.responsekit.spring.SlicedResponseFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Component;
 
 class App {
-//    Any JpaRepository
     @Autowired
-    YourRepository yourRepository;
-    
-    public PagedResponse<YourDTO> getAll(){
-       Page<YourEntity> page = yourRepository.findAll(pageable);
+    YourRepository yourRepository; // Any JpaRepository
 
-       return PagedResponseFactory.fromPage(page, (YourEntity) -> {
-//           your conversions...
-       });
+    public SlicedResponse<YourDTO> getAll(Object yourCursor, Pageable pageable) {
+        Slice<YourEntity> slice = yourRepository.findAll(yourCursor, pageable); // Your custom query for cursor pagination
+
+        return SlicedResponseFactory.fromSlice(slice, this::responseMapper, this::cursorExtractor);
+    }
+    
+    // Map an entity to DTO
+    private YourDTO responseMapper(YourEntity entity){
+        // ...
+    }
+    
+    // Extract cursor from entity. You can use any lambda expression that returns a string
+    private String cursorExtractor(YourEntity entity){
+        // ...
     }
 }
 ````
