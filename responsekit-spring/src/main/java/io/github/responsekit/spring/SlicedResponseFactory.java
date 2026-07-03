@@ -7,7 +7,6 @@ import io.github.responsekit.spring.exception.InvalidSliceException;
 import org.springframework.data.domain.Slice;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.function.Function;
 
 public class SlicedResponseFactory {
