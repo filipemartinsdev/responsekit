@@ -49,7 +49,7 @@ Base library to use with any Java application.
 
 ### Install
 
-Include in `pom.xml`:
+Include in `pom.xml` with the current version:
 
 
 ````xml
@@ -57,7 +57,7 @@ Include in `pom.xml`:
     <dependency>
         <groupId>io.github.filipemartinsdev</groupId>
         <artifactId>responsekit-core</artifactId>
-        <version>0.3.4</version>
+        <version>CURRENT_VERSION</version>
     </dependency>
 </dependencies>
 ````
@@ -84,7 +84,7 @@ Include in `pom.xml`:
       <dependency>
           <groupId>io.github.filipemartinsdev</groupId>
           <artifactId>responsekit-spring</artifactId>
-          <version>0.3.4</version>
+          <version>CURRENT_VERSION</version>
       </dependency>
   </dependencies>
   ````
@@ -111,7 +111,7 @@ Include in `pom.xml`:
       <dependency>
           <groupId>io.github.filipemartinsdev</groupId>
           <artifactId>responsekit-quarkus</artifactId>
-          <version>0.3.4</version>
+          <version>CURRENT_VERSION</version>
       </dependency>
   </dependencies>
   ````
