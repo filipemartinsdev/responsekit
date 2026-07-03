@@ -9,7 +9,7 @@
 
   <groupId>io.github.filipemartinsdev</groupId>
   <artifactId>responsekit-parent</artifactId>
-  <version>0.3.4</version>
+  <version>0.4.0</version>
   <packaging>pom</packaging>
 
   <modules>
